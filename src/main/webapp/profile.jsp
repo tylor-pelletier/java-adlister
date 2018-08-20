@@ -1,0 +1,17 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: tylorpelletier
+  Date: 8/20/18
+  Time: 12:02 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Profile</title>
+</head>
+<body>
+    <h1>Hello Admin!</h1>
+</body>
+</html>
