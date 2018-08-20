@@ -20,22 +20,27 @@
 
 <html>
 <head>
-    <title>Login</title>
-    <%@ include file="./partials/head.jsp" %>
+    <jsp:include page="./partials/head.jsp">
+        <jsp:param name="title" value="Login" />
+    </jsp:include>
 </head>
 <body>
 
     <%@ include file="./partials/navbar.jsp" %>
 
-    <form method="post" action="login.jsp">
-        <label for="username">Username:</label><br>
-        <input id="username" type="text" name="username">
-        <br><br>
-        <label for="password">Password:</label><br>
-        <input id="password" type="password" name="password">
-        <br><br>
-        <button type="submit">Log In</button>
-    </form>
+    <div class="container">
+        <form method="post" action="login.jsp">
+            <div class="form-group">
+                <label for="username">Username:</label><br>
+                <input id="username" type="text" name="username">
+                <br><br>
+                <label for="password">Password:</label><br>
+                <input id="password" type="password" name="password">
+                <br><br>
+                <button class="btn btn-primary" type="submit">Log In</button>
+            </div>
+        </form>
+    </div>
 
 </body>
 </html>

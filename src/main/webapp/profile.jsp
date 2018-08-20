@@ -9,9 +9,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Profile</title>
+    <jsp:include page="./partials/head.jsp">
+        <jsp:param name="title" value="Admin Profile" />
+    </jsp:include>
 </head>
 <body>
+
+    <%@ include file="./partials/navbar.jsp" %>
+
     <h1>Hello Admin!</h1>
+
 </body>
 </html>
