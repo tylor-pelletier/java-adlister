@@ -6,12 +6,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "ViewProfileServlet", urlPatterns = "/profile")
-public class ViewProfileServlet extends HttpServlet {
+@WebServlet(name = "LogoutServlet", urlPatterns = "/logout")
+public class LogoutServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") != null) {
-            request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/logout.jsp").forward(request, response);
             return;
         }
         response.sendRedirect("/login");
@@ -19,10 +19,14 @@ public class ViewProfileServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
+        String yes = request.getParameter("yes");
+        String no = request.getParameter("no");
 
-        if (request.getParameter("log-out") != null) {
+        if (yes != null) {
             session.invalidate();
             response.sendRedirect("/login");
+            return;
         }
+        response.sendRedirect("/profile");
     }
 }
