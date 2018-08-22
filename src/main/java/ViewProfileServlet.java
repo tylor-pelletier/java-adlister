@@ -21,8 +21,8 @@ public class ViewProfileServlet extends HttpServlet {
         HttpSession session = request.getSession();
 
         if (request.getParameter("log-out") != null) {
-            session.invalidate();
-            response.sendRedirect("/login");
+//            session.invalidate();
+            response.sendRedirect("/logout");
         }
     }
 }
